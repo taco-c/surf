@@ -2145,6 +2145,11 @@ main(int argc, char *argv[])
 	else
 		arg.v = "about:blank";
 
+#ifdef HOMEPAGE
+  arg.v = HOMEPAGE;
+#else
+  arg.v = "about:blank";
+#endif
 	setup();
 	c = newclient(NULL);
 	showview(NULL, c);
