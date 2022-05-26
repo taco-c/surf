@@ -12,6 +12,8 @@ static char **plugindirs    = (char*[]){
 	NULL
 };
 
+#define HOMEPAGE "https://duckduckgo.com/";
+
 /* Webkit default features */
 /* Highest priority value will be used.
  * Default parameters are priority 0
@@ -199,5 +201,3 @@ static Button buttons[] = {
 	{ OnAny,        0,              9,      clicknavigate,  { .i = +1 },    1 },
 	{ OnMedia,      MODKEY,         1,      clickexternplayer, { 0 },       1 },
 };
-
-#define HOMEPAGE "https://duckduckgo.com/"
