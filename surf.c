@@ -1578,22 +1578,22 @@ void
 mousetargetchanged(WebKitWebView *v, WebKitHitTestResult *h, guint modifiers,
     Client *c)
 {
-	// WebKitHitTestResultContext hc = webkit_hit_test_result_get_context(h);
+	WebKitHitTestResultContext hc = webkit_hit_test_result_get_context(h);
 
-	// /* Keep the hit test to know where is the pointer on the next click */
-	// c->mousepos = h;
+	/* Keep the hit test to know where is the pointer on the next click */
+	c->mousepos = h;
 
-	// if (hc & OnLink)
-	// 	c->targeturi = webkit_hit_test_result_get_link_uri(h);
-	// else if (hc & OnImg)
-	// 	c->targeturi = webkit_hit_test_result_get_image_uri(h);
-	// else if (hc & OnMedia)
-	// 	c->targeturi = webkit_hit_test_result_get_media_uri(h);
-	// else
-	// 	c->targeturi = NULL;
+	if (hc & OnLink)
+		c->targeturi = webkit_hit_test_result_get_link_uri(h);
+	else if (hc & OnImg)
+		c->targeturi = webkit_hit_test_result_get_image_uri(h);
+	else if (hc & OnMedia)
+		c->targeturi = webkit_hit_test_result_get_media_uri(h);
+	else
+		c->targeturi = NULL;
 
-	// c->overtitle = c->targeturi;
-	// updatetitle(c);
+	c->overtitle = c->targeturi;
+	//updatetitle(c);
 }
 
 gboolean
