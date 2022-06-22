@@ -6,6 +6,11 @@ In order to build surf you need GTK+ and Webkit/GTK+ header files.
 
 In order to use the functionality of the url-bar, also install dmenu[0].
 
+### Arch Linux
+```
+sudo pacman -S gcr webkit2gtk
+```
+
 ### \*buntu
 ```
 sudo apt install libwebkit2gtk-4.0-dev libgcr-3-dev
